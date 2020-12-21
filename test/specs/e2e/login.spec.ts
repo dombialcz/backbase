@@ -37,6 +37,7 @@ describe('BBlog login user frontend tests', () => {
             LoginPage.passwordField.click();
             LoginPage.passwordField.setValue('test');
             LoginPage.passwordField.click();
+            LoginPage.passwordField.addValue('test');
             browser.waitUntil( () => LoginPage.usernameField.isValid());
 
             LoginPage.submit();
