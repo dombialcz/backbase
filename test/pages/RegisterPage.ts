@@ -15,7 +15,7 @@ export class RegisterPage extends Page  {
     }
 
     get errorMessagesList () : string[] {
-        let output: string[] = [""];
+        let output: string[] = [];
 
         const errorMessagesArray = this.errorMessages;
         for (var message of errorMessagesArray) {
