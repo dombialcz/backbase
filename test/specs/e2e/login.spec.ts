@@ -22,7 +22,9 @@ describe('BBlog login user frontend tests', () => {
         it('should inform that password cannot be blank', () => {
             LoginPage.usernameField.click();
             LoginPage.usernameField.setValue('test');
-            browser.waitUntil( () => LoginPage.usernameField.isValid());
+
+            expect(LoginPage.usernameField.isValid()).to.be.true;
+
             LoginPage.submit();
             LoginPage.waitForErrors();
 
@@ -62,7 +64,9 @@ describe('BBlog login user frontend tests', () => {
 
         });
         afterEach( () => {
+            LoginPage.usernameField.click();
             LoginPage.usernameField.clearValue();
+            LoginPage.passwordField.click();
             LoginPage.passwordField.clearValue();
         })
     });

@@ -25,12 +25,12 @@ export class LoginPage extends Page  {
     }
 
     public waitForErrors (): void {
-        browser.pause(2000); // sync issues with dynamic form
         $('ul[class="error-messages"]').waitForExist();
     }
 
     // Remember to click a field and check for isValid or isTouched before submitting or risk uninitialized validators
     public submit () : void {
+        browser.pause(10000); // sync issues with dynamic form
         this.submitButton.click();
     }
 }
