@@ -7,7 +7,7 @@
 
 # Run
 #####  run tests
-```npm run test-e2e```
+```npm run test```
 ##### generate and display allure report locally
  ```npm run test-allure```
 

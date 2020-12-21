@@ -14,7 +14,7 @@
     "test": "test"
   },
   "scripts": {
-    "test-e2e": "npx wdio",
+    "test": "npx wdio",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --fix --ext .ts",
     "test-allure": "allure generate allure-results --clean && allure open"
