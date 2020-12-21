@@ -26,12 +26,12 @@ export class RegisterPage extends Page  {
     }
 
     public waitForErrors (): void {
-        browser.pause(1000);
         $('ul[class="error-messages"]').waitForExist();
     }
 
     // Remember to click a field and check for isValid or isTouched before submitting or risk uninitialized validators
     public submit () : void {
+        browser.pause(7000); // sync issues with dynamic form on CircleCI
         this.submitButton.click();
     }
 }

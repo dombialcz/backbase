@@ -30,7 +30,7 @@ export class LoginPage extends Page  {
 
     // Remember to click a field and check for isValid or isTouched before submitting or risk uninitialized validators
     public submit () : void {
-        browser.pause(10000); // sync issues with dynamic form
+        browser.pause(7000); // sync issues with dynamic form on CircleCI
         this.submitButton.click();
     }
 }
