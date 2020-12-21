@@ -1,0 +1,28 @@
+# Prerequisites
+
+- [nodejs 14](https://nodejs.org/en/) 
+- typescript ` npm install -g typescript `
+- install dependencies `npm i`
+- [install chrome](https://www.google.com/chrome/)
+
+# Run
+#####  run tests
+```npm run test-e2e```
+##### generate and display allure report locally
+ ```npm run test-allure```
+
+
+# Test cases
+
+| Test case | Component| short description |
+|---|---|---| 
+| [Register new user](register.md) | Registration form | |
+| [Register form validation - negative](register-negative.md)  | Registration form | test validators on front end |
+
+
+
+# Bug reports
+
+| Name | Severity | Component|
+| --- | --- | --- |
+| [Can signup with blank password](../bugreports/bugreport.md) | Major (Blocker) | Registration form |
