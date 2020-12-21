@@ -15,13 +15,13 @@ jobs:
           command: java -jar selenium-server-standalone-3.5.3.jar -log report/selenium.log
           background: true
       - run:
-          name: Install Node Modules
+          name: store_test_results Install Node Modules
           command: npm install
       - run:
           name: Test
           command: npm run test
       - store_test_results:
-          path: report
+          path: allure-results
 workflows:
   version: 2
   test:

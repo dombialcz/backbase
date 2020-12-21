@@ -26,6 +26,7 @@ export class RegisterPage extends Page  {
     }
 
     public waitForErrors (): void {
+        browser.pause(1000);
         $('ul[class="error-messages"]').waitForExist();
     }
 
