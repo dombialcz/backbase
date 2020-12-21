@@ -20,8 +20,8 @@ describe('BBlog login user frontend tests', () => {
             expect(LoginPage.passwordField.isDisplayed()).to.be.true;
         });
         it('should inform that password cannot be blank', () => {
-            LoginPage.usernameField.setValue('test');
             LoginPage.usernameField.click();
+            LoginPage.usernameField.setValue('test');
             browser.waitUntil( () => LoginPage.usernameField.isValid());
             LoginPage.submit();
             LoginPage.waitForErrors();
@@ -30,8 +30,8 @@ describe('BBlog login user frontend tests', () => {
 
         });
         it('should inform that password is invalid', () => {
-            LoginPage.usernameField.setValue('test');
             LoginPage.usernameField.click();
+            LoginPage.usernameField.setValue('test');
             browser.waitUntil( () => LoginPage.usernameField.isValid());
 
             LoginPage.passwordField.click();
@@ -61,5 +61,9 @@ describe('BBlog login user frontend tests', () => {
             expect(LoginPage.errorMessagesList).to.include("email or password is invalid");
 
         });
+        afterEach( () => {
+            LoginPage.usernameField.clearValue();
+            LoginPage.passwordField.clearValue();
+        })
     });
 });
