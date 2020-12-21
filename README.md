@@ -26,3 +26,10 @@
 | Name | Severity | Component|
 | --- | --- | --- |
 | [Can signup with blank password](bugreports/bugreport.md) | Major (Blocker) | Registration form |
+
+---
+
+| CircleCI | | [![<CircleCI>](https://circleci.com/gh/dombialcz/backbase.svg?style=svg)](https://app.circleci.com/pipelines/github/dombialcz/backbase) |
+| --- | --- | --- |
+
+
