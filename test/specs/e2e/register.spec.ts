@@ -1,6 +1,7 @@
 import { expect } from 'chai';
 import MainPage from '../../pages/MainPage'
 import RegisterPage from '../../pages/RegisterPage'
+import LoginPage from "test/pages/LoginPage";
 
 const DEFAULT_TIMEOUT = 5000;
 
@@ -45,18 +46,6 @@ describe('BBlog register user frontend tests', () => {
 
             expect(RegisterPage.errorMessagesList).to.include("email is invalid");
         });
-        it('should inform email is blank', () => {
-            RegisterPage.usernameField.setValue('unique11112222');
-            RegisterPage.usernameField.click();
-            RegisterPage.emailField.click();
-            RegisterPage.emailField.setValue('');
-            RegisterPage.emailField.click();
-            browser.waitUntil( () => RegisterPage.emailField.isValid());
-            RegisterPage.submit();
-            RegisterPage.waitForErrors();
-
-            expect(RegisterPage.errorMessagesList).to.include("email can\'t be blank");
-        });
         it('should inform username is invalid', () => {
             RegisterPage.usernameField.setValue('test555@!$%');
             RegisterPage.usernameField.click();
@@ -67,6 +56,27 @@ describe('BBlog register user frontend tests', () => {
             RegisterPage.waitForErrors();
 
             expect(MainPage.logo.isDisplayed()).to.be.true; // TODO: fix cannot login with missing email field from form
+        });
+        afterEach( () => {
+            LoginPage.usernameField.click();
+            LoginPage.usernameField.clearValue();
+            LoginPage.passwordField.click();
+            LoginPage.passwordField.clearValue();
+        })
+    });
+
+
+    describe('Fresh form test for blank input', () => {
+        before(() => {
+            RegisterPage.open();
+        });
+        it('should inform email is blank', () => {
+            RegisterPage.usernameField.setValue('unique11112222');
+            RegisterPage.usernameField.click();
+            RegisterPage.submit();
+            RegisterPage.waitForErrors();
+
+            expect(RegisterPage.errorMessagesList).to.include("email can\'t be blank");
         });
     });
 });
