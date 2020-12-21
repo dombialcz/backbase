@@ -57,6 +57,16 @@ exports.config = {
         maxInstances: 1,
         //
         browserName: 'chrome',
+        'goog:chromeOptions': {
+            args: [
+                '--no-sandbox',
+                '--headless',
+                // Use-gl option resolves issue related to assets loading in headless mode
+                // '--use-gl=WebGL',
+                '--disable-dev-shm-usage',
+                // '--user-agent=Mozilla/99.0 (Macintosh; Intel Mac OS X 99_99_9) AppleWebKit/999.99 (KHTML, like Gecko) Chrome/999.0.0.99 Safari/999.99',
+            ],
+        }
         // If outputDir is provided WebdriverIO can capture driver session logs
         // it is possible to configure which logTypes to include/exclude.
         // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
