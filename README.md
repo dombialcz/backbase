@@ -16,8 +16,8 @@
 
 | Test case | Component| short description |
 |---|---|---| 
-| [Register new user](register.md) | Registration form | |
-| [Register form validation - negative](register-negative.md)  | Registration form | test validators on front end |
+| [Register new user](testcases/register.md) | Registration form | |
+| [Register form validation - negative](testcases/register-negative.md)  | Registration form | test validators on front end |
 
 
 
@@ -25,4 +25,4 @@
 
 | Name | Severity | Component|
 | --- | --- | --- |
-| [Can signup with blank password](../bugreports/bugreport.md) | Major (Blocker) | Registration form |
+| [Can signup with blank password](bugreports/bugreport.md) | Major (Blocker) | Registration form |
