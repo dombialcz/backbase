@@ -1,7 +1,32 @@
-version: 2.1
-orbs:
-  node: circleci/node@3.0.0
+jobs:
+  test:
+    docker:
+      - image: circleci/node:jessie-browsers
+    steps:
+      - checkout
+      - run:
+          name: Make Report Directory
+          command: mkdir report
+      - run:
+          name: Download Selenium Standalone Server
+          command: curl -O http://selenium-release.storage.googleapis.com/3.5/selenium-server-standalone-3.5.3.jar
+      - run:
+          name: Start Selenium Standalone Server
+          command: java -jar selenium-server-standalone-3.5.3.jar -log report/selenium.log
+          background: true
+      - run:
+          name: Install Node Modules
+          command: npm install
+      - run:
+          name: Execute ESlint Check
+          command: npm run eslint-check
+      - run:
+          name: Test
+          command: npm run test
+      - store_test_results:
+          path: report
 workflows:
-  node-tests:
+  version: 2
+  test:
     jobs:
-      - node/test
+      - test
