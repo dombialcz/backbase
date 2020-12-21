@@ -18,9 +18,6 @@ jobs:
           name: Install Node Modules
           command: npm install
       - run:
-          name: Execute ESlint Check
-          command: npm run eslint-check
-      - run:
           name: Test
           command: npm run test
       - store_test_results:
