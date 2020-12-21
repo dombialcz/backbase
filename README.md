@@ -18,6 +18,7 @@
 |---|---|---| 
 | [Register new user](testcases/register.md) | Registration form | |
 | [Register form validation - negative](testcases/register-negative.md)  | Registration form | test validators on front end |
+| [Login user](testcases/login.md)  | Login form | test login happy path |
 
 
 
@@ -28,7 +29,7 @@
 | [Can signup with blank password](bugreports/bugreport.md) | Major (Blocker) | Registration form |
 
 ---
-#####CircleCI
+##### CircleCI
 |  [![<CircleCI>](https://circleci.com/gh/dombialcz/backbase.svg?style=svg)](https://app.circleci.com/pipelines/github/dombialcz/backbase) | | https://app.circleci.com/pipelines/github/dombialcz/backbase|
 | --- | --- | --- |
 
